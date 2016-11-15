@@ -25,6 +25,14 @@ module.exports = function(grunt) {
     dev: {
       files: [{
         expand: true,
+        cwd: './node_modules',
+        src: [
+          'vue/dist/vue.js'
+        ],
+        flatten: true,
+        dest: 'assets/js/dependencies'
+      },{
+        expand: true,
         cwd: './assets',
         src: ['**/*.!(coffee|less)'],
         dest: '.tmp/public'
