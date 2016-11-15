@@ -2,7 +2,7 @@
   "name": "sails-vue-simple-crud",
   "private": true,
   "version": "0.0.0",
-  "description": "a Sails application",
+  "description": "A simple CRUD application built with Sails and Vue.",
   "keywords": [],
   "dependencies": {
     "ejs": "2.3.4",
@@ -31,8 +31,8 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/root/sails-vue-simple-crud.git"
+    "url": "git://github.com/craigvantonder/sails-vue-simple-crud.git"
   },
-  "author": "root",
-  "license": ""
+  "author": "Craig van Tonder",
+  "license": "MIT"
 }
