@@ -1,0 +1,43 @@
+<div id="app" v-cloak>
+  <person-alter :list="persons"></person-alter>
+  <br><hr>
+  <person-list :list="persons"></person-list>
+</div>
+
+<template id="person-alter-template">
+  <div>
+    <h2>{{ type }} Person</h2>
+    <form @submit.prevent="alterPerson">
+        <input type="text" v-if="!viewingDelete" placeholder="Enter person name" v-model="form.name" />
+        <input type="text" v-if="!viewingDelete" placeholder="Enter person age" v-model="form.age" />
+        <p v-if="viewingDelete">Are you sure you want to delete person: <strong>{{ form.name }}</strong></p>
+      <button type="submit" v-show="form.name && form.age">{{ type }}</button>
+    </form>
+  </div>
+</template>
+
+<template id="person-list-template">
+  <div>
+    <h2>
+      Persons
+      <span v-if="total">({{ total }})</span>
+    </h2>
+    <table border="1" v-if="total">
+      <tr>
+        <th>Person</th>
+        <th>Age</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+      <tr v-for="(person, key) in list">
+        <td>{{ person.name }}</td>
+        <td>{{ person.age }}</td>
+        <td><button type="button" @click="alteringPerson('Edit', person, key)">Edit</button></td>
+        <td><button type="button" @click="alteringPerson('Delete', person, key)">Delete</button></td>
+      </tr>
+    </table>
+    <div v-else>
+      <p>No persons are available.</p>
+    </div>
+  </div>
+</template>
