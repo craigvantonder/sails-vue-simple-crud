@@ -21,4 +21,4 @@ To ensure that grunt has copied vue as into place and that the linker reflects t
 
 From this point you can use the application via `http://localhost:1337/`.
 
-See the screenshots folder for application states.
+See the [screenshots folder](https://github.com/craigvantonder/sails-vue-simple-crud/tree/master/screenshots) for application states.
