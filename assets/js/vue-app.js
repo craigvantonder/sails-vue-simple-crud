@@ -52,7 +52,14 @@ io.socket.get('/person', function(resData, jwres){
           if (self.viewingDelete) {
             self.list.splice(self.key, 1);
           }
-          return;
+          // Reset UI back to Add state
+          self.type = 'Add',
+          self.key = '',
+          self.form = {
+            id: '',
+            name: '',
+            datafeed: ''
+          };
         });
       }
     },
